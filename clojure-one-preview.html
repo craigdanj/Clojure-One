@@ -1,0 +1,111 @@
+<div id="clojure-one-preview">
+  <p class="vis-sr-only">Preview of Clojure One on a made-up bookshelf example: core forms are pink, function names are green, keywords are purple, symbols are brown, strings are gold, namespaces are blue, and class names are cyan.</p>
+  <div class="editor">
+    <div class="tabbar">
+      <div class="tab">bookshelf.clj</div>
+    </div>
+    <div class="body">
+      <div class="line"><span class="gutter">1</span><code class="src"><span class="p">(</span><span class="core">ns</span> <span class="ns">demo.bookshelf</span></code></div>
+      <div class="line"><span class="gutter">2</span><code class="src">  <span class="str">"A tiny example for theme preview."</span></code></div>
+      <div class="line"><span class="gutter">3</span><code class="src">  <span class="p">(</span><span class="kw">:require</span> <span class="p">[</span><span class="ns">clojure.string</span> <span class="kw">:as</span> <span class="sym">str</span><span class="p">]</span></code></div>
+      <div class="line"><span class="gutter">4</span><code class="src">            <span class="p">[</span><span class="ns">clojure.set</span> <span class="kw">:as</span> <span class="sym">set</span><span class="p">])</span></code></div>
+      <div class="line"><span class="gutter">5</span><code class="src">  <span class="p">(</span><span class="kw">:import</span> <span class="p">[</span><span class="ns">java.time</span> <span class="cls">LocalDate</span><span class="p">]</span></code></div>
+      <div class="line"><span class="gutter">6</span><code class="src">           <span class="p">[</span><span class="ns">java.util</span> <span class="cls">UUID</span><span class="p">]))</span></code></div>
+      <div class="line"><span class="gutter">7</span><code class="src"></code></div>
+      <div class="line"><span class="gutter">8</span><code class="src"><span class="cmt">;; How many books fit on one shelf.</span></code></div>
+      <div class="line"><span class="gutter">9</span><code class="src"><span class="p">(</span><span class="core">def</span> <span class="p">^</span><span class="kw">:private</span> <span class="sym">shelf-limit</span> <span class="sym">12</span><span class="p">)</span></code></div>
+      <div class="line"><span class="gutter">10</span><code class="src"></code></div>
+      <div class="line"><span class="gutter">11</span><code class="src"><span class="p">(</span><span class="core">defn-</span> <span class="fn">blank?</span> <span class="p">[</span><span class="sym">s</span><span class="p">]</span></code></div>
+      <div class="line"><span class="gutter">12</span><code class="src">  <span class="p">(</span><span class="core">or</span> <span class="p">(</span><span class="fn">nil?</span> <span class="sym">s</span><span class="p">)</span> <span class="p">(</span><span class="core">not</span> <span class="p">(</span><span class="fn">seq</span> <span class="p">(</span><span class="fn">str</span> <span class="sym">s</span><span class="p">)))))</span></code></div>
+      <div class="line"><span class="gutter">13</span><code class="src"></code></div>
+      <div class="line"><span class="gutter">14</span><code class="src"><span class="p">(</span><span class="core">defn</span> <span class="fn">add-book</span></code></div>
+      <div class="line"><span class="gutter">15</span><code class="src">  <span class="str">"Put a title on the shelf."</span></code></div>
+      <div class="line"><span class="gutter">16</span><code class="src">  <span class="p">[{</span><span class="kw">:keys</span> <span class="p">[</span><span class="sym">title</span> <span class="sym">author</span><span class="p">]</span> <span class="kw">:as</span> <span class="sym">book</span><span class="p">}]</span></code></div>
+      <div class="line current"><span class="gutter">17</span><code class="src">  <span class="p">(</span><span class="core">let</span> <span class="p">[</span><span class="sym">title*</span><span class="caret" aria-hidden="true"></span> <span class="p">(</span><span class="ns">str</span><span class="p">/</span><span class="fn">trim</span> <span class="sym">title</span><span class="p">)</span></code></div>
+      <div class="line"><span class="gutter">18</span><code class="src">        <span class="sym">label</span> <span class="p">(</span><span class="core">if</span> <span class="p">(</span><span class="fn">blank?</span> <span class="sym">title*</span><span class="p">)</span></code></div>
+      <div class="line"><span class="gutter">19</span><code class="src">                <span class="str">"Untitled"</span></code></div>
+      <div class="line"><span class="gutter">20</span><code class="src">                <span class="p">(</span><span class="fn">format-label</span> <span class="sym">book</span><span class="p">))]</span></code></div>
+      <div class="line"><span class="gutter">21</span><code class="src">    <span class="p">{</span><span class="kw">:id</span> <span class="p">(</span><span class="fn">str</span> <span class="p">(</span><span class="cls">UUID</span><span class="p">/</span><span class="fn">randomUUID</span><span class="p">))</span></code></div>
+      <div class="line"><span class="gutter">22</span><code class="src">     <span class="kw">:label</span> <span class="sym">label</span></code></div>
+      <div class="line"><span class="gutter">23</span><code class="src">     <span class="kw">:added</span> <span class="p">(</span><span class="fn">str</span> <span class="p">(</span><span class="cls">LocalDate</span><span class="p">/</span><span class="fn">now</span><span class="p">))})</span></code></div>
+    </div>
+    <div class="status">
+      <span>Clojure</span>
+      <span>Ln 17, Col 14</span>
+    </div>
+  </div>
+</div>
+<style>
+  #clojure-one-preview .editor {
+    background: #282c34;
+    color: #abb2bf;
+    border: 1px solid #181a1f;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  #clojure-one-preview .tabbar {
+    background: #21252b;
+    display: flex;
+    font-family: system-ui, sans-serif;
+    font-size: 12px;
+  }
+  #clojure-one-preview .tab {
+    background: #282c34;
+    color: #d7dae0;
+    padding: 8px 16px;
+    border-top: 2px solid #528bff;
+  }
+  #clojure-one-preview .body {
+    padding: 8px 0 12px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12.5px;
+    line-height: 20px;
+  }
+  #clojure-one-preview .line {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    min-height: 20px;
+  }
+  #clojure-one-preview .line.current {
+    background: #2c313c;
+  }
+  #clojure-one-preview .gutter {
+    color: #4b5263;
+    text-align: right;
+    padding-right: 12px;
+  }
+  #clojure-one-preview .line.current .gutter {
+    color: #abb2bf;
+  }
+  #clojure-one-preview .src {
+    font: inherit;
+    color: #abb2bf;
+    white-space: pre;
+  }
+  #clojure-one-preview .core { color: #e06c75; }
+  #clojure-one-preview .fn { color: #98c379; }
+  #clojure-one-preview .kw { color: #c678dd; }
+  #clojure-one-preview .sym { color: #d19a66; }
+  #clojure-one-preview .str { color: #e5c07b; }
+  #clojure-one-preview .cmt { color: #5c6370; }
+  #clojure-one-preview .ns { color: #61afef; }
+  #clojure-one-preview .cls { color: #56b6c2; }
+  #clojure-one-preview .p { color: #abb2bf; }
+  #clojure-one-preview .caret {
+    display: inline-block;
+    width: 2px;
+    height: 14px;
+    background: #528bff;
+    vertical-align: text-bottom;
+    margin: 0 1px;
+  }
+  #clojure-one-preview .status {
+    background: #21252b;
+    color: #9da5b4;
+    font-family: system-ui, sans-serif;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 12px;
+  }
+</style>
