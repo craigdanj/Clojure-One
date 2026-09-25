@@ -1,0 +1,33 @@
+{
+  "name": "clojure-one",
+  "displayName": "Clojure One",
+  "description": "One Monokai colours mapped onto Clojure syntax for Calva and clojure-lsp.",
+  "version": "1.1.0",
+  "publisher": "local",
+  "license": "MIT",
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "clojure",
+    "clojurescript",
+    "one",
+    "theme"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Clojure One",
+        "uiTheme": "vs-dark",
+        "path": "./themes/clojure-one.json"
+      }
+    ]
+  }
+}
