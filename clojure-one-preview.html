@@ -1,111 +1,41 @@
-<div id="clojure-one-preview">
-  <p class="vis-sr-only">Preview of Clojure One on a made-up bookshelf example: core forms are pink, function names are green, keywords are purple, symbols are brown, strings are gold, namespaces are blue, and class names are cyan.</p>
-  <div class="editor">
-    <div class="tabbar">
-      <div class="tab">bookshelf.clj</div>
-    </div>
-    <div class="body">
-      <div class="line"><span class="gutter">1</span><code class="src"><span class="p">(</span><span class="core">ns</span> <span class="ns">demo.bookshelf</span></code></div>
-      <div class="line"><span class="gutter">2</span><code class="src">  <span class="str">"A tiny example for theme preview."</span></code></div>
-      <div class="line"><span class="gutter">3</span><code class="src">  <span class="p">(</span><span class="kw">:require</span> <span class="p">[</span><span class="ns">clojure.string</span> <span class="kw">:as</span> <span class="sym">str</span><span class="p">]</span></code></div>
-      <div class="line"><span class="gutter">4</span><code class="src">            <span class="p">[</span><span class="ns">clojure.set</span> <span class="kw">:as</span> <span class="sym">set</span><span class="p">])</span></code></div>
-      <div class="line"><span class="gutter">5</span><code class="src">  <span class="p">(</span><span class="kw">:import</span> <span class="p">[</span><span class="ns">java.time</span> <span class="cls">LocalDate</span><span class="p">]</span></code></div>
-      <div class="line"><span class="gutter">6</span><code class="src">           <span class="p">[</span><span class="ns">java.util</span> <span class="cls">UUID</span><span class="p">]))</span></code></div>
-      <div class="line"><span class="gutter">7</span><code class="src"></code></div>
-      <div class="line"><span class="gutter">8</span><code class="src"><span class="cmt">;; How many books fit on one shelf.</span></code></div>
-      <div class="line"><span class="gutter">9</span><code class="src"><span class="p">(</span><span class="core">def</span> <span class="p">^</span><span class="kw">:private</span> <span class="sym">shelf-limit</span> <span class="sym">12</span><span class="p">)</span></code></div>
-      <div class="line"><span class="gutter">10</span><code class="src"></code></div>
-      <div class="line"><span class="gutter">11</span><code class="src"><span class="p">(</span><span class="core">defn-</span> <span class="fn">blank?</span> <span class="p">[</span><span class="sym">s</span><span class="p">]</span></code></div>
-      <div class="line"><span class="gutter">12</span><code class="src">  <span class="p">(</span><span class="core">or</span> <span class="p">(</span><span class="fn">nil?</span> <span class="sym">s</span><span class="p">)</span> <span class="p">(</span><span class="core">not</span> <span class="p">(</span><span class="fn">seq</span> <span class="p">(</span><span class="fn">str</span> <span class="sym">s</span><span class="p">)))))</span></code></div>
-      <div class="line"><span class="gutter">13</span><code class="src"></code></div>
-      <div class="line"><span class="gutter">14</span><code class="src"><span class="p">(</span><span class="core">defn</span> <span class="fn">add-book</span></code></div>
-      <div class="line"><span class="gutter">15</span><code class="src">  <span class="str">"Put a title on the shelf."</span></code></div>
-      <div class="line"><span class="gutter">16</span><code class="src">  <span class="p">[{</span><span class="kw">:keys</span> <span class="p">[</span><span class="sym">title</span> <span class="sym">author</span><span class="p">]</span> <span class="kw">:as</span> <span class="sym">book</span><span class="p">}]</span></code></div>
-      <div class="line current"><span class="gutter">17</span><code class="src">  <span class="p">(</span><span class="core">let</span> <span class="p">[</span><span class="sym">title*</span><span class="caret" aria-hidden="true"></span> <span class="p">(</span><span class="ns">str</span><span class="p">/</span><span class="fn">trim</span> <span class="sym">title</span><span class="p">)</span></code></div>
-      <div class="line"><span class="gutter">18</span><code class="src">        <span class="sym">label</span> <span class="p">(</span><span class="core">if</span> <span class="p">(</span><span class="fn">blank?</span> <span class="sym">title*</span><span class="p">)</span></code></div>
-      <div class="line"><span class="gutter">19</span><code class="src">                <span class="str">"Untitled"</span></code></div>
-      <div class="line"><span class="gutter">20</span><code class="src">                <span class="p">(</span><span class="fn">format-label</span> <span class="sym">book</span><span class="p">))]</span></code></div>
-      <div class="line"><span class="gutter">21</span><code class="src">    <span class="p">{</span><span class="kw">:id</span> <span class="p">(</span><span class="fn">str</span> <span class="p">(</span><span class="cls">UUID</span><span class="p">/</span><span class="fn">randomUUID</span><span class="p">))</span></code></div>
-      <div class="line"><span class="gutter">22</span><code class="src">     <span class="kw">:label</span> <span class="sym">label</span></code></div>
-      <div class="line"><span class="gutter">23</span><code class="src">     <span class="kw">:added</span> <span class="p">(</span><span class="fn">str</span> <span class="p">(</span><span class="cls">LocalDate</span><span class="p">/</span><span class="fn">now</span><span class="p">))})</span></code></div>
-    </div>
-    <div class="status">
-      <span>Clojure</span>
-      <span>Ln 17, Col 14</span>
-    </div>
-  </div>
-</div>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Clojure One — A little more clarity.</title>
 <style>
-  #clojure-one-preview .editor {
-    background: #282c34;
-    color: #abb2bf;
-    border: 1px solid #181a1f;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  #clojure-one-preview .tabbar {
-    background: #21252b;
-    display: flex;
-    font-family: system-ui, sans-serif;
-    font-size: 12px;
-  }
-  #clojure-one-preview .tab {
-    background: #282c34;
-    color: #d7dae0;
-    padding: 8px 16px;
-    border-top: 2px solid #528bff;
-  }
-  #clojure-one-preview .body {
-    padding: 8px 0 12px;
-    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-    font-size: 12.5px;
-    line-height: 20px;
-  }
-  #clojure-one-preview .line {
-    display: grid;
-    grid-template-columns: 40px minmax(0, 1fr);
-    min-height: 20px;
-  }
-  #clojure-one-preview .line.current {
-    background: #2c313c;
-  }
-  #clojure-one-preview .gutter {
-    color: #4b5263;
-    text-align: right;
-    padding-right: 12px;
-  }
-  #clojure-one-preview .line.current .gutter {
-    color: #abb2bf;
-  }
-  #clojure-one-preview .src {
-    font: inherit;
-    color: #abb2bf;
-    white-space: pre;
-  }
-  #clojure-one-preview .core { color: #e06c75; }
-  #clojure-one-preview .fn { color: #98c379; }
-  #clojure-one-preview .kw { color: #c678dd; }
-  #clojure-one-preview .sym { color: #d19a66; }
-  #clojure-one-preview .str { color: #e5c07b; }
-  #clojure-one-preview .cmt { color: #5c6370; }
-  #clojure-one-preview .ns { color: #61afef; }
-  #clojure-one-preview .cls { color: #56b6c2; }
-  #clojure-one-preview .p { color: #abb2bf; }
-  #clojure-one-preview .caret {
-    display: inline-block;
-    width: 2px;
-    height: 14px;
-    background: #528bff;
-    vertical-align: text-bottom;
-    margin: 0 1px;
-  }
-  #clojure-one-preview .status {
-    background: #21252b;
-    color: #9da5b4;
-    font-family: system-ui, sans-serif;
-    font-size: 12px;
-    display: flex;
-    justify-content: space-between;
-    padding: 4px 12px;
-  }
-</style>
+:root{color-scheme:dark;--bg:#15181d;--text:#eef0e9;--muted:#9bA29e;--green:#b4d49a;--border:#ffffff12}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}button,a{ -webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:5px}header,main,footer{max-width:1360px;margin:auto;padding-left:64px;padding-right:64px}header{height:100px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}.brand{display:flex;gap:12px;align-items:center;font-weight:650;font-size:18px;letter-spacing:-.5px}.logo{color:var(--green);font-family:monospace;font-size:28px;letter-spacing:-7px;width:32px}.nav{font-size:13px;color:#bbc0bd;display:flex;gap:30px;align-items:center}.nav a:hover{color:var(--green)}.pill{font-size:10px;letter-spacing:1.3px;border:1px solid #b4d49a30;color:var(--green);padding:7px 10px;border-radius:30px}.hero{padding:74px 0 49px;display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:end}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--green);display:flex;align-items:center;gap:10px}.dot{width:6px;height:6px;background:var(--green);border-radius:50%}h1{font-weight:450;font-size:clamp(42px,5.4vw,74px);line-height:1.07;letter-spacing:-3.8px;margin:23px 0 0}h1 em{font-style:normal;color:var(--green)}.intro p{font-size:14px;color:var(--muted);line-height:1.8;margin:0 0 23px}.link{font-size:13px;border-bottom:1px solid #b4d49a60;padding-bottom:7px;color:var(--green)}.preview-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;font-size:11px;color:var(--muted)}.preview-top .label{letter-spacing:1.8px;text-transform:uppercase}.controls{display:flex;gap:6px}.control{border:1px solid var(--border);background:#20242a;color:#bac0c8;border-radius:5px;padding:6px 11px;font-size:11px}.control:hover{background:#30363e}.workspace{border:1px solid #ffffff18;border-radius:10px;overflow:hidden;box-shadow:0 25px 80px #0004}.titlebar{height:42px;background:#20242a;display:flex;align-items:center;justify-content:space-between;padding:0 18px;color:#9399a4;font-size:11px}.lights{display:flex;gap:7px;width:75px}.lights i{width:8px;height:8px;background:#59616b;border-radius:50%}.lights i:first-child{background:#cc7779}.lights i:nth-child(2){background:#c7ac73}.lights i:nth-child(3){background:#89a77c}.titlebar>span:last-child{width:75px;text-align:right;color:#6f7884}.workbody{display:grid;grid-template-columns:190px minmax(0,1fr)}.sidebar{background:#21252b;border-right:1px solid #181a1f;padding:21px 0;color:#9da5b4;font-size:12px}.side-heading{font-size:9px;letter-spacing:1.5px;padding:0 20px 25px;color:#7b838e}.folder{padding:0 15px 17px;color:#c3c8ce}.file{padding:9px 20px}.file.active{background:#2c313a;color:#d7dae0}.file b{color:#98c379;font-weight:400;margin-right:10px}.side-note{margin:30px 18px 0;border-top:1px solid #ffffff0b;padding-top:18px;font-size:10px;line-height:1.8;color:#77818c}.editor{background:#282c34;color:#abb2bf;min-width:0}.tabbar{background:#21252b;display:flex;font-size:11px;justify-content:space-between;align-items:center}.tab{background:#282c34;color:#d7dae0;padding:13px 18px;border-top:1px solid #98c379}.tab span{color:#98c379;margin-right:9px}.tabbar>span{padding:0 17px;color:#68717c}.breadcrumb{padding:13px 22px 4px;color:#727c89;font-size:10px}.body{padding:14px 0 24px;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:12px;line-height:23px;overflow-x:auto}.line{display:grid;grid-template-columns:53px minmax(max-content,1fr);min-height:23px;padding-right:24px}.line.current{background:#2c313c}.gutter{color:#4b5263;text-align:right;padding-right:20px;user-select:none}.line.current .gutter{color:#abb2bf}.src{font:inherit;color:#abb2bf;white-space:pre}.core{color:#e06c75}.fn{color:#98c379}.kw{color:#c678dd}.sym{color:#d19a66}.str{color:#e5c07b}.cmt{color:#5c6370}.ns{color:#61afef}.cls{color:#56b6c2}.p{color:#abb2bf}.caret{display:inline-block;width:2px;height:14px;background:#528bff;vertical-align:text-bottom;margin:0 1px}.status{background:#21252b;color:#9da5b4;font-size:10px;display:flex;justify-content:space-between;padding:8px 17px;border-top:1px solid #181a1f}.status .branch{color:#98c379}.palette{padding:29px 0 36px;display:grid;grid-template-columns:180px 1fr;border-bottom:1px solid var(--border);gap:20px}.palette-heading{font-size:12px;margin-top:3px}.palette-heading small{display:block;font-size:10px;color:var(--muted);margin-top:8px}.swatches{display:grid;grid-template-columns:repeat(7,1fr);gap:14px}.swatch{border:0;padding:0;background:transparent;text-align:left;color:var(--muted);font-size:10px}.swatch i{height:4px;border-radius:3px;display:block;background:var(--color);margin:3px 0 13px;transition:transform .2s}.swatch:hover i{transform:scaleY(2)}.swatch strong{display:block;color:#c4cbc7;font-size:10px;font-weight:450}.swatch span{display:block;font-family:monospace;font-size:9px;opacity:.65;margin-top:5px}.details{display:grid;grid-template-columns:repeat(3,1fr);gap:55px;padding:43px 0 50px}.detail-number{font:10px monospace;color:#65715f}.details h2{font-weight:500;font-size:15px;margin:14px 0 10px}.details p{font-size:12px;color:var(--muted);line-height:1.8;margin:0}.bottom{border:1px solid var(--border);background:#1b201f;border-radius:8px;padding:27px 30px;display:flex;align-items:center;justify-content:space-between;gap:25px}.bottom h2{font-size:20px;letter-spacing:-.5px;font-weight:450;margin:0 0 8px}.bottom p{font-size:12px;color:var(--muted);margin:0}.button{display:inline-flex;background:var(--green);color:#202a1a;padding:13px 20px;border-radius:5px;font-size:12px;font-weight:600;white-space:nowrap}.button:hover{background:#c5e3ad}footer{padding-top:34px;padding-bottom:34px;display:flex;justify-content:space-between;color:#717b77;font-size:10px}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#d9e8ce;color:#1d291a;padding:11px 20px;border-radius:7px;font-size:12px;box-shadow:0 5px 25px #0005;z-index:5}.toast:empty{display:none}.hide-lines .gutter{visibility:hidden}@media(min-width:1500px){.body{font-size:13px}}@media(max-width:900px){header,main,footer{padding-left:30px;padding-right:30px}.hero{grid-template-columns:1fr 270px;gap:25px}h1{letter-spacing:-2px}.workbody{grid-template-columns:145px minmax(0,1fr)}.palette{grid-template-columns:1fr}.palette-heading small{display:inline;margin-left:12px}.details{gap:25px}}@media(max-width:650px){header,main,footer{padding-left:20px;padding-right:20px}header{height:78px}.nav{gap:17px}.nav .pill{display:none}.hero{padding:43px 0 35px;grid-template-columns:1fr;gap:24px}h1{font-size:49px}.intro p{max-width:360px;margin-bottom:17px}.sidebar{display:none}.workbody{grid-template-columns:1fr}.body{font-size:11px;line-height:22px}.line{min-height:22px;grid-template-columns:40px minmax(max-content,1fr)}.gutter{padding-right:13px}.titlebar{padding:0 12px}.titlebar>span:last-child{display:none}.lights{width:45px}.titlebar>span{font-size:10px}.swatches{grid-template-columns:repeat(4,1fr);row-gap:22px}.details{grid-template-columns:1fr;gap:27px;padding:32px 0}.details h2{margin-top:8px}.bottom{align-items:flex-start;flex-direction:column;padding:24px}.status{font-size:9px}.status .optional{display:none}footer{gap:20px;line-height:1.7}.preview-top .label{font-size:9px;letter-spacing:1px}}
+</style></head><body>
+<header><a class="brand" href="#"><span class="logo" aria-hidden="true">(λ)</span>Clojure One</a><nav class="nav" aria-label="Main"><span class="pill">VS CODE THEME</span><a href="https://github.com/craigdanj/Clojure-One">GitHub ↗</a></nav></header>
+<main><section class="hero"><div><div class="eyebrow"><span class="dot"></span>Made for the language you love</div><h1>A little less noise.<br>A little more <em>clarity.</em></h1></div><div class="intro"><p>A familiar dark palette, thoughtfully tuned for Clojure. Give every form, function, and small idea a little room to breathe.</p><a class="link" href="#preview">Explore the palette ↓</a></div></section>
+<section id="preview" aria-label="Clojure One theme preview"><div class="preview-top"><span class="label">01 / In its element</span><div class="controls"><button class="control" id="lines" aria-pressed="true">Line numbers</button><button class="control" id="copy">Copy code</button></div></div><div class="workspace"><div class="titlebar"><div class="lights" aria-hidden="true"><i></i><i></i><i></i></div><span>bookshelf — Clojure One</span><span>⌘</span></div><div class="workbody"><aside class="sidebar" aria-label="Example project"><div class="side-heading">EXPLORER</div><div class="folder">⌄ &nbsp; BOOKSHELF</div><div class="file">⌄ &nbsp; src / demo</div><div class="file active"><b>λ</b>bookshelf.clj</div><div class="side-note">A small collection.<br>A few good functions.<br>Everything in its place.</div></aside><div class="editor"><div class="tabbar"><div class="tab"><span>λ</span>bookshelf.clj &nbsp; ×</div><span>···</span></div><div class="breadcrumb">src &nbsp; / &nbsp; demo &nbsp; / &nbsp; bookshelf.clj</div><div class="body" tabindex="0" role="region" aria-label="Scrollable syntax-highlighted Clojure sample"><div class="line"><span class="gutter">1</span><code class="src"><span class="p">(</span><span class="core">ns</span> <span class="ns">demo.bookshelf</span></code></div>
+<div class="line"><span class="gutter">2</span><code class="src">  <span class="str">"A tiny example for theme preview."</span></code></div>
+<div class="line"><span class="gutter">3</span><code class="src">  <span class="p">(</span><span class="kw">:require</span> <span class="p">[</span><span class="ns">clojure.string</span> <span class="kw">:as</span> <span class="sym">str</span><span class="p">]</span></code></div>
+<div class="line"><span class="gutter">4</span><code class="src">            <span class="p">[</span><span class="ns">clojure.set</span> <span class="kw">:as</span> <span class="sym">set</span><span class="p">])</span></code></div>
+<div class="line"><span class="gutter">5</span><code class="src">  <span class="p">(</span><span class="kw">:import</span> <span class="p">[</span><span class="ns">java.time</span> <span class="cls">LocalDate</span><span class="p">]</span></code></div>
+<div class="line"><span class="gutter">6</span><code class="src">           <span class="p">[</span><span class="ns">java.util</span> <span class="cls">UUID</span><span class="p">]))</span></code></div>
+<div class="line"><span class="gutter">7</span><code class="src"></code></div>
+<div class="line"><span class="gutter">8</span><code class="src"><span class="cmt">;; How many books fit on one shelf.</span></code></div>
+<div class="line"><span class="gutter">9</span><code class="src"><span class="p">(</span><span class="core">def</span> <span class="p">^</span><span class="kw">:private</span> <span class="sym">shelf-limit</span> <span class="sym">12</span><span class="p">)</span></code></div>
+<div class="line"><span class="gutter">10</span><code class="src"></code></div>
+<div class="line"><span class="gutter">11</span><code class="src"><span class="p">(</span><span class="core">defn-</span> <span class="fn">blank?</span> <span class="p">[</span><span class="sym">s</span><span class="p">]</span></code></div>
+<div class="line"><span class="gutter">12</span><code class="src">  <span class="p">(</span><span class="core">or</span> <span class="p">(</span><span class="fn">nil?</span> <span class="sym">s</span><span class="p">)</span> <span class="p">(</span><span class="core">not</span> <span class="p">(</span><span class="fn">seq</span> <span class="p">(</span><span class="fn">str</span> <span class="sym">s</span><span class="p">)))))</span></code></div>
+<div class="line"><span class="gutter">13</span><code class="src"></code></div>
+<div class="line"><span class="gutter">14</span><code class="src"><span class="p">(</span><span class="core">defn</span> <span class="fn">add-book</span></code></div>
+<div class="line"><span class="gutter">15</span><code class="src">  <span class="str">"Put a title on the shelf."</span></code></div>
+<div class="line"><span class="gutter">16</span><code class="src">  <span class="p">[{</span><span class="kw">:keys</span> <span class="p">[</span><span class="sym">title</span> <span class="sym">author</span><span class="p">]</span> <span class="kw">:as</span> <span class="sym">book</span><span class="p">}]</span></code></div>
+<div class="line current"><span class="gutter">17</span><code class="src">  <span class="p">(</span><span class="core">let</span> <span class="p">[</span><span class="sym">title*</span><span class="caret" aria-hidden="true"></span> <span class="p">(</span><span class="ns">str</span><span class="p">/</span><span class="fn">trim</span> <span class="sym">title</span><span class="p">)</span></code></div>
+<div class="line"><span class="gutter">18</span><code class="src">        <span class="sym">label</span> <span class="p">(</span><span class="core">if</span> <span class="p">(</span><span class="fn">blank?</span> <span class="sym">title*</span><span class="p">)</span></code></div>
+<div class="line"><span class="gutter">19</span><code class="src">                <span class="str">"Untitled"</span></code></div>
+<div class="line"><span class="gutter">20</span><code class="src">                <span class="p">(</span><span class="fn">format-label</span> <span class="sym">book</span><span class="p">))]</span></code></div>
+<div class="line"><span class="gutter">21</span><code class="src">    <span class="p">{</span><span class="kw">:id</span> <span class="p">(</span><span class="fn">str</span> <span class="p">(</span><span class="cls">UUID</span><span class="p">/</span><span class="fn">randomUUID</span><span class="p">))</span></code></div>
+<div class="line"><span class="gutter">22</span><code class="src">     <span class="kw">:label</span> <span class="sym">label</span></code></div>
+<div class="line"><span class="gutter">23</span><code class="src">     <span class="kw">:added</span> <span class="p">(</span><span class="fn">str</span> <span class="p">(</span><span class="cls">LocalDate</span><span class="p">/</span><span class="fn">now</span><span class="p">))})</span></code></div></div></div></div><div class="status"><span><span class="branch">⑂ main</span> &nbsp; ✓ Clojure One</span><span><span class="optional">Ln 17, Col 14 &nbsp; · &nbsp; UTF-8 &nbsp; · &nbsp; </span>Clojure</span></div></div></section>
+<section class="palette" aria-label="Theme palette"><div class="palette-heading">A color for every thought.<small>Click a color to copy its hex.</small></div><div class="swatches"><button class="swatch" style="--color:#E06C75" data-color="#E06C75" aria-label="Copy Forms color #E06C75"><i></i><strong>Forms</strong><span>#E06C75</span></button><button class="swatch" style="--color:#98C379" data-color="#98C379" aria-label="Copy Functions color #98C379"><i></i><strong>Functions</strong><span>#98C379</span></button><button class="swatch" style="--color:#C678DD" data-color="#C678DD" aria-label="Copy Keywords color #C678DD"><i></i><strong>Keywords</strong><span>#C678DD</span></button><button class="swatch" style="--color:#D19A66" data-color="#D19A66" aria-label="Copy Symbols color #D19A66"><i></i><strong>Symbols</strong><span>#D19A66</span></button><button class="swatch" style="--color:#E5C07B" data-color="#E5C07B" aria-label="Copy Strings color #E5C07B"><i></i><strong>Strings</strong><span>#E5C07B</span></button><button class="swatch" style="--color:#61AFEF" data-color="#61AFEF" aria-label="Copy Namespaces color #61AFEF"><i></i><strong>Namespaces</strong><span>#61AFEF</span></button><button class="swatch" style="--color:#56B6C2" data-color="#56B6C2" aria-label="Copy Types color #56B6C2"><i></i><strong>Types</strong><span>#56B6C2</span></button></div></section>
+<section class="details"><article><span class="detail-number">01 — LANGUAGE</span><h2>Clojure, considered.</h2><p>Distinct colors for core forms, functions, keywords, and namespaces. Structure you can see at a glance.</p></article><article><span class="detail-number">02 — CONTEXT</span><h2>Meaning meets color.</h2><p>TextMate and semantic token rules, designed for the richer language context of Calva and clojure-lsp.</p></article><article><span class="detail-number">03 — ATMOSPHERE</span><h2>One cohesive workspace.</h2><p>From the first line to the terminal below, a consistent dark palette inspired by One Monokai.</p></article></section>
+<section class="bottom"><div><h2>Make yourself at home.</h2><p>Bring Clojure One to your editor. Open source, ready to make your own.</p></div><a class="button" href="https://github.com/craigdanj/Clojure-One">Get the theme &nbsp; ↗</a></section></main><footer><span>Clojure One · Crafted for Clojure.</span><span>Inspired by One Monokai · <a href="https://github.com/craigdanj/Clojure-One">Source ↗</a></span></footer><div class="toast" role="status" aria-live="polite"></div>
+<script>
+const toast=document.querySelector('.toast');let timer;
+function announce(message){toast.textContent=message;clearTimeout(timer);timer=setTimeout(()=>toast.textContent='',2600)}
+async function copyText(text,message){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text)}else{const field=document.createElement('textarea');field.value=text;field.style.position='fixed';field.style.opacity='0';document.body.append(field);field.select();const ok=document.execCommand('copy');field.remove();if(!ok)throw Error('Copy failed')}announce(message)}catch{announce('Copy unavailable in this browser. Select and copy manually.')}}
+document.querySelector('#copy').addEventListener('click',()=>copyText([...document.querySelectorAll('.src')].map(x=>x.textContent).join('\n'),'Code copied'));
+document.querySelector('#lines').addEventListener('click',function(){const hidden=document.querySelector('.editor').classList.toggle('hide-lines');this.setAttribute('aria-pressed',String(!hidden))});
+document.querySelectorAll('.swatch').forEach(button=>button.addEventListener('click',()=>copyText(button.dataset.color,button.dataset.color+' copied')));
+</script></body></html>
